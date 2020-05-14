@@ -1,11 +1,14 @@
 # Python script to launch Breakout and query labs.yaml file for appropriate ports, open in SecureCRT
 # Designed for macOS (Unix) - can be optimized for Windows / other Linux distros
+
+# Note that this is optimized for macOS. File paths may need to be changed depending on your environment.
+
 import os
 import yaml
 import subprocess
 
-subprocess.call(["rm", "/Users/kelvintran/breakoutfiles/labs.yaml"]) # Delete existing labs.yaml file if it exists
-subprocess.call(["/Users/kelvintran/breakoutfiles/breakout", "-noverify", "-config", "config.yaml", "init"]) # Call breakout process to create labs.yaml file
+subprocess.call(["rm", "/Users/username/breakoutfiles/labs.yaml"]) # Delete existing labs.yaml file if it exists
+subprocess.call(["/Users/username/breakoutfiles/breakout", "-noverify", "-config", "config.yaml", "init"]) # Call breakout process to create labs.yaml file
     
 stream = open('labs.yaml', 'r')
 data = yaml.load(stream, Loader=yaml.FullLoader)
